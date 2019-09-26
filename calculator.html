@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="calculator.css"/>
+  <title>CourSys - Formula Tester</title>
+</head>
+
+<body>
+  <div class="blackOutter">
+    <div class=whiteInner>
+      
+      <h1>Grade Calculator</h1>
+
+      <div class = "grayTable">
+
+        <h2>Activities</h2>
+        <p>Give grades to the numeric activities:</p>
+
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Short Name</th>
+            <th>Weight</th>
+            <th>Grade</th>
+            <th>Percent</th>        
+          </tr>
+
+          <tr>
+            <td>Activity 1</td> 
+            <td>A1</td>
+            <td>
+                <input type="text" name="weightA1" id="weightA1">
+            </td>
+            <td>          
+                <input type="text"  name= "A1Mark" id="A1Mark">                          
+                <span class="input-group-addon">/</span>
+                <br>
+                <input type="text" name="A1Total" id="A1Total">          
+            </td>
+            <td>
+              <p id="percent1"</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Activity 2</td>
+            <td>A2</td>
+            <td>
+                <input type="text" name="Weight" id="weightA2">
+            </td>
+            <td>          
+                <input type="text" name="A2Mark" id="A2Mark">           
+                <span class="input-group-addon">/</span>
+                <br>
+                <input type="text" name="A2Total" id="A2Total">          
+            </td>
+            <td>
+              <p id="percent2"</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Activity 3</td>
+            <td>A3</td>
+            <td>
+                <input type="text" name="Weight" id="weightA3">
+            </td>
+            <td>          
+                <input type="text" name="A3Mark" id="A3Mark">           
+                <span class="input-group-addon">/</span>
+                <br>
+                <input type="text" name="A3Total" id="A3Total">          
+            </td>
+            <td>
+              <p id="percent3"</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Activity 4</td>
+            <td>A4</td>
+            <td>
+                <input type="text" name="Weight" id="weightA4">
+            </td>
+            <td>          
+                <input type="text" name="A4Mark" id="A4Mark">           
+                <span class="input-group-addon">/</span>
+                <br>
+                <input type="text" name="A4Total" id="A4Total">          
+            </td>
+            <td>
+              <p id="percent4"</p>
+            </td>
+          </tr>
+        </table>
+
+        <h2>Result</h2>
+        <p id="PostResults"> </p>
+        <p id="PostResults2"> </p>
+        <br>
+
+        <button type="button" id="MeanButton" onclick='document.getElementById("PostResults").innerHTML = "Mean Value: " + meanCalculation()'>MEAN</button>
+        <button type="button" onclick='document.getElementById("PostResults2").innerHTML = "Weighted Mean: " + weightCalculation() + "/100"'>WEIGHT</button>
+
+        <p id = "demo"></p>
+
+      </div>
+    </div>
+  <div>
+
+
+  <script src="calculator.js"></script>
+
+
+</body>
+
+
+</html>
