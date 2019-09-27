@@ -13,7 +13,7 @@
       document.getElementById("A4Total").addEventListener("input", calculaterA4Average);
 
      
-      // I struggled to figure out how to loop this process so I instead made four version of the function
+      // I struggled to figure out how to loop this process so I instead made four version of the function.
       // the functions just get the input values and calculate the average (mark/total = average)
       // the last line updates percentage value shown on the webpage
       function calculateA1Average()
@@ -58,12 +58,15 @@
       // Mean calculations
         function meanCalculation()
         {
+          //used to keep track of how many grades are used in the calculation. Will decrease if a input section is unused. 
           var counter = 4;
 
+          // figures out the average for a particular mark. The average value eventually gets used to calculate the mean. 
           var A1Mark = document.getElementById("A1Mark").value;
           var A1Total = document.getElementById("A1Total").value;
           var A1Average = A1Mark / A1Total;
 
+          // this checks to make sure the number isnt infinity or Not a Number which could cause an error. 
           if(!isFinite(A1Average))
           {
             counter--;
@@ -101,6 +104,7 @@
             A4Average = 0;
           }
 
+          // using the averages divided by the counter(0-4) we can calculate the mean. 
           var mean = percentConversion((A1Average + A2Average + A3Average + A4Average) / counter);
 
           return mean;
@@ -110,19 +114,17 @@
 
         function weightCalculation()
         {
-          var counter = 4;
-          var errorMessage = "";
-
+          //collect the input values and calculate the averages
           var A1Mark = document.getElementById("A1Mark").value;
           var A1Total = document.getElementById("A1Total").value;
           var A1Average = A1Mark / A1Total;
           var A1Weight = document.getElementById("weightA1").value;
 
+          // check to ensure that the input values do not equal infinity or NaN
           if(!isFinite(A1Average) || !isFinite(A1Weight))
           {
             A1Average = 0;
             A1Weight = 0;
-            //var errorMessage = "Invalid entry in weight one.  ";
           }
 
           var A2Mark = document.getElementById("A2Mark").value;
@@ -134,7 +136,6 @@
           {
             A2Average = 0;
             A2Weight = 0;
-            //var errorMessage = "Invalid entry in weight two.  ";
           }
 
           var A3Mark = document.getElementById("A3Mark").value;
@@ -146,7 +147,6 @@
           {
             A3Average = 0;
             A3Weight = 0;
-            //var errorMessage = "Invalid entry in weight three.  ";
           }
 
           var A4Mark = document.getElementById("A4Mark").value;
@@ -158,11 +158,10 @@
           {
             A4Average = 0;
             A4Weight = 0;
-            //var errorMessage = "Invalid entry in weight four.  ";          
           }
 
           var totalWeight = (Number(A1Weight)+Number(A2Weight)+Number(A3Weight)+Number(A4Weight));
           var weightedMean = (((A1Average*A1Weight + A2Average*A2Weight + A3Average*A3Weight + A4Average*A4Weight)/totalWeight)*100).toFixed(2);
          
-          return errorMessage + weightedMean;
+          return weightedMean;
         }

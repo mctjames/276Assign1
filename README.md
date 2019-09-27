@@ -9,3 +9,6 @@ https://ancient-mesa-60307.herokuapp.com/
 
 Git hub link
 https://github.com/mctjames/276Assign1
+
+index.php was used to circumvent the need for nodejs files when I wasnt using
+any of those for this particular assignment. 
